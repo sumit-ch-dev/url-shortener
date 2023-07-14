@@ -1,7 +1,12 @@
 import React, { useContext } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { UrlContext } from '../../contexts/UrlContext';
+import { Container, Title, StyledForm, StyledField, ErrorText, SubmitButton } from './EntryPage.styles';
+import UrlCardList from '../list-page/UrlCardList';
+
+
+// Styled components
 
 const EntryPage = () => {
   const { urls, addUrl } = useContext(UrlContext);
@@ -30,28 +35,23 @@ const EntryPage = () => {
   };
 
   return (
-    <div>
-      <h1>Entry Page</h1>
+    <Container>
+      <Title>Entry Page</Title>
       <Formik
         initialValues={{ url: '' }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <Form>
-          <Field type="text" name="url" placeholder="Enter URL" />
-          <ErrorMessage name="url" component="div" />
-          <button type="submit">Convert</button>
-        </Form>
+        <StyledForm>
+          <StyledField type="text" name="url" placeholder="Enter URL" />
+          <ErrorText name="url" component="div" />
+          <SubmitButton type="submit">Convert</SubmitButton>
+        </StyledForm>
       </Formik>
       <div>
-        {urls.map((urlData, index) => (
-          <div key={index}>
-            <p>Original URL: {urlData.url}</p>
-            <p>Shortened URL: {urlData.shortUrl}</p>
-          </div>
-        ))}
+        <UrlCardList urls={urls} />
       </div>
-    </div>
+    </Container>
   );
 };
 

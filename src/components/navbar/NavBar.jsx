@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { StyledHeader, Logo, StyledMenu, MenuItem } from './NavBar.styles';
+import { StyledHeader, Logo, StyledMenu, StyledMenuItem as MenuItem } from './NavBar.styles';
 
 const Navbar = () => {
   return (
     <StyledHeader>
-      <Logo>Your Logo</Logo>
+      <Logo>URL Shortener</Logo>
       <StyledMenu mode="horizontal" defaultSelectedKeys={['home']}>
         <MenuItem key="home">
           <Link to="/">Home</Link>

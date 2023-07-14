@@ -1,33 +1,40 @@
 import styled from 'styled-components';
-import { Layout, Menu } from 'antd';
+import { Menu } from 'antd';
 
-const { Header } = Layout;
-
-export const StyledHeader = styled(Header)`
-  background-color: #325d85;
+export const StyledHeader = styled.header`
+  background-color: #181f29;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.h1`
   color: #fff;
-  font-size: 20px;
+  font-size: 24px;
+  margin: 0;
 `;
 
 export const StyledMenu = styled(Menu)`
-  background-color: transparent;
   border: none;
+
+  .ant-menu-item {
+    a {
+      color: #333;
+    }
+  }
+
+  .ant-menu-item-selected {
+    background-color: transparent;
+    border-bottom: 2px solid #ff6b6b;
+  }
+  
+  .ant-menu-item {
+    margin: 0 10px;
+  }
 `;
 
-export const MenuItem = styled(Menu.Item)`
-  & a {
-    color: #fff;
-    font-weight: bold;
-  }
 
-  &.ant-menu-item-selected {
-    background-color: #1890ff;
-  }
+export const StyledMenuItem = styled(Menu.Item)`
+  border: none;
 `;
