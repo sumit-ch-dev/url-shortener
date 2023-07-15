@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sumit1729.github.io/url-shortener/static/css/main.e6c13ad2.css",
+    "main.js": "/sumit1729.github.io/url-shortener/static/js/main.ffb570bd.js",
+    "static/js/787.510b8ba1.chunk.js": "/sumit1729.github.io/url-shortener/static/js/787.510b8ba1.chunk.js",
+    "index.html": "/sumit1729.github.io/url-shortener/index.html",
+    "main.e6c13ad2.css.map": "/sumit1729.github.io/url-shortener/static/css/main.e6c13ad2.css.map",
+    "main.ffb570bd.js.map": "/sumit1729.github.io/url-shortener/static/js/main.ffb570bd.js.map",
+    "787.510b8ba1.chunk.js.map": "/sumit1729.github.io/url-shortener/static/js/787.510b8ba1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.ffb570bd.js"
+  ]
+}
