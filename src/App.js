@@ -8,16 +8,16 @@ import Navbar from './components/navbar/NavBar';
 
 const App = () => {
   return (
-    <Router basename='/url-shortener'>
-      <UrlProvider>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<EntryPage />} />
-          <Route path="/edit" element={<EditPage />} />
-          <Route path="/list" element={<ListPage />} />
-        </Routes>
-      </UrlProvider>
-    </Router>
+      <Router basename='/url-shortener'>
+        <UrlProvider>
+          <Navbar />
+          <Routes>
+            <Route index path="/" element={<EntryPage />} />
+            <Route path="/edit" element={<EditPage />} />
+            <Route path="/list" element={<ListPage />} />
+          </Routes>
+        </UrlProvider>
+      </Router>
   );
 };
 
