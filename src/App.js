@@ -8,7 +8,7 @@ import Navbar from './components/navbar/NavBar';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename='/url-shortener'>
       <UrlProvider>
         <Navbar />
         <Routes>
