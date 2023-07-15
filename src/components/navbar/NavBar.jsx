@@ -1,24 +1,22 @@
 import React from 'react';
+import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
-import { StyledHeader, Logo, StyledMenu, StyledMenuItem as MenuItem } from './NavBar.styles';
+import { HomeOutlined, UnorderedListOutlined, EditOutlined } from '@ant-design/icons';
 
-const Navbar = () => {
+const NavBar = () => {
   return (
-    <StyledHeader>
-      <Logo>URL Shortener</Logo>
-      <StyledMenu mode="horizontal" defaultSelectedKeys={['home']}>
-        <MenuItem key="home">
-          <Link to="/">Home</Link>
-        </MenuItem>
-        <MenuItem key="list">
-          <Link to="/list">List</Link>
-        </MenuItem>
-        <MenuItem key="edit">
-          <Link to="/edit">Edit</Link>
-        </MenuItem>
-      </StyledMenu>
-    </StyledHeader>
+    <Menu mode="horizontal" defaultSelectedKeys={['home']}>
+      <Menu.Item key="home" icon={<HomeOutlined />}>
+        <Link to="/">Home</Link>
+      </Menu.Item>
+      <Menu.Item key="list" icon={<UnorderedListOutlined />}>
+        <Link to="/list">List</Link>
+      </Menu.Item>
+      <Menu.Item key="edit" icon={<EditOutlined />}>
+        <Link to="/edit">Edit</Link>
+      </Menu.Item>
+    </Menu>
   );
 };
 
-export default Navbar;
+export default NavBar;
