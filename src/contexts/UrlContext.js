@@ -22,9 +22,18 @@ const UrlProvider = ({ children }) => {
     setUrls((prevUrls) => [...prevUrls, urlData]);
   };
 
-  const updateUrl = (id, field, value) => {
+  const updateUrl = (id, originalUrl, shortUrl) => {
     setUrls((prevUrls) =>
-      prevUrls.map((url) => (url.id === id ? { ...url, [field]: value } : url))
+      prevUrls.map((url) => {
+        if (url.id === id) {
+          return {
+            ...url,
+            originalUrl: originalUrl,
+            shortUrl: shortUrl,
+          };
+        }
+        return url;
+      })
     );
   };
 
@@ -37,7 +46,7 @@ const UrlProvider = ({ children }) => {
   };
 
   return (
-    <UrlContext.Provider value={{ urls, addUrl, updateUrl, deleteUrl }}>
+    <UrlContext.Provider value={{ urls, addUrl, updateUrl, deleteUrl, generateShortUrl }}>
       {children}
     </UrlContext.Provider>
   );
