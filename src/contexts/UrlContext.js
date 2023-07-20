@@ -22,16 +22,22 @@ const UrlProvider = ({ children }) => {
     setUrls((prevUrls) => [...prevUrls, urlData]);
   };
 
-  const updateUrl = (index, updatedUrl) => {
+  const updateUrl = (id, field, value) => {
+    setUrls((prevUrls) =>
+      prevUrls.map((url) => (url.id === id ? { ...url, [field]: value } : url))
+    );
+  };
+
+  const deleteUrl = (index) => {
     setUrls((prevUrls) => {
       const updatedUrls = [...prevUrls];
-      updatedUrls[index].url = updatedUrl;
+      updatedUrls.splice(index, 1);
       return updatedUrls;
     });
   };
 
   return (
-    <UrlContext.Provider value={{ urls, addUrl, updateUrl }}>
+    <UrlContext.Provider value={{ urls, addUrl, updateUrl, deleteUrl }}>
       {children}
     </UrlContext.Provider>
   );

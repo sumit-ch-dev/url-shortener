@@ -7,6 +7,11 @@ const UrlCard = ({urlData}) => {
         alert('Short URL copied to clipboard!');
     };
 
+    const handleShortUrlClick = (e) => {
+        e.preventDefault()
+        window.open(url, '_blank');
+    };
+
     const {url, shortUrl} = urlData;
 
     return (
@@ -14,7 +19,9 @@ const UrlCard = ({urlData}) => {
             <Card>
                 <Url>{url}</Url>
                 <ShortUrlContainer>
-                    <ShortUrl>{shortUrl}</ShortUrl>
+                    <ShortUrl href={shortUrl} target='_blank' rel="noopener noreferrer" onClick={handleShortUrlClick}>
+                        {shortUrl}
+                    </ShortUrl>
                     <CopyButton onClick={() => handleCopyClick(shortUrl)}>
                         Copy
                     </CopyButton>

@@ -16,14 +16,10 @@ const EntryPage = () => {
   });
 
   const generateShortUrl = (url) => {
-    // Replace this with your own URL shortening logic
-    const hashCode = url.split('').reduce((a, b) => {
-      a = (a << 5) - a + b.charCodeAt(0);
-      return a & a;
-    }, 0);
-
-    return Math.abs(hashCode).toString(36);
+    const randomString = Math.random().toString(36).substring(2);
+    return `https://bit.ly/${randomString}`;
   };
+  
 
   const handleSubmit = (values, { resetForm }) => {
     const { url } = values;

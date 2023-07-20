@@ -18,7 +18,7 @@ export const ShortUrlContainer = styled.div`
   align-items: center;
 `;
 
-export const ShortUrl = styled.p`
+export const ShortUrl = styled.a`
   font-size: 14px;
   color: #666;
   margin: 0;

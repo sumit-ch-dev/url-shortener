@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { UrlProvider } from './contexts/UrlContext';
 import EntryPage from './components/entry-page/EntryPage';
-import EditPage from './components/EditPage';
+import EditPage from './components/edit-page/EditPage';
 import ListPage from './components/list-page/ListPage';
 import Navbar from './components/navbar/NavBar';
 
