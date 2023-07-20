@@ -46,7 +46,7 @@ const UrlProvider = ({ children }) => {
   };
 
   return (
-    <UrlContext.Provider value={{ urls, addUrl, updateUrl, deleteUrl, generateShortUrl }}>
+    <UrlContext.Provider value={{ urls, addUrl, updateUrl, deleteUrl }}>
       {children}
     </UrlContext.Provider>
   );
